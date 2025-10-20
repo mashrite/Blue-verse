@@ -74,42 +74,50 @@
   }
 
   
-  /* Verse Grid */
-  .verse-grid {
+ /* Verse Grid */
+.verse-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     grid-auto-rows: 280px;
-    gap: 18px;
+    gap: 16px;
   }
+  
   .verse-block {
     background: var(--card-bg);
-    border-radius: 16px;
+    border-radius: 14px;
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.04);
     backdrop-filter: blur(6px);
-    box-shadow: 0 8px 30px rgba(4,10,23,0.6);
+    box-shadow: 0 6px 24px rgba(4,10,23,0.5);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 14px;
     animation: fadeIn 1s ease forwards;
+    min-height: 240px;
   }
+  
   .verse-block img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 10px;
+    max-height: 220px;
   }
+  
   .verse-block p.quote {
     font-size: 15px;
     font-style: italic;
-    line-height: 1.45;
+    line-height: 1.5;
     text-align: center;
-    padding: 12px;
+    padding: 10px 12px;
     background: var(--quote-bg);
-    border-radius: 12px;
+    border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 12px;
   }
+  
   .verse-block p.quote:hover {
     transform: translateY(-4px);
     box-shadow: 0 4px 20px rgba(255,255,255,0.1);
@@ -122,6 +130,29 @@
   .verse-block.wide {
     grid-column: span 2;
   }
+  
+  /* Mobile Optimization */
+  @media (max-width: 600px) {
+    .verse-grid {
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
+    }
+  
+    .verse-block {
+      padding: 12px;
+      min-height: auto;
+    }
+  
+    .verse-block img {
+      max-height: 180px;
+    }
+  
+    .verse-block p.quote {
+      font-size: 14px;
+      padding: 8px 10px;
+    }
+  }
+  
   
   /* Footer */
   footer {
@@ -516,3 +547,19 @@
     color: var(--accent);
   }
     
+  .quote-block {
+    padding: 16px;
+    background: var(--quote-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  .quote-block .quote {
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 8px 12px;
+  }
+  
