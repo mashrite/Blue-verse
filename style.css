@@ -12,7 +12,42 @@
     --quote-bg: rgba(255,255,255,0.6);
     --accent: #2563eb;
   }
-  
+
+body {
+  font-size: clamp(14px, 2vw, 16px);
+}
+h1, h2, h3 {
+  font-size: clamp(20px, 5vw, 32px);
+}
+.container, .footer-section, .intro-box {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+p, h1, h2, h3 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.footer-contact {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.contact-btn {
+  flex: 1 1 120px;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .intro-box, .footer-message, .footer-contact {
+    padding: 24px 12px;
+  }
+  .contact-btn {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+}
+
   /* Reset */
   * {
     box-sizing: border-box;
@@ -515,4 +550,5 @@
     font-weight: bold;
     color: var(--accent);
   }
+
     
